@@ -16,4 +16,8 @@ model = keras.models.load_model("64x3-CNN.model")
 
 for i in range(1, 6):
     prediction = model.predict([prepare(f"Prediction Data/dog{i}.jpg")])
-    print(CATEGORIES[int(prediction[0][0])])
+    print(i, CATEGORIES[int(prediction[0][0])])
+
+for i in range(1, 5):
+    prediction = model.predict([prepare(f"Prediction Data/cat{i}.jpeg")])
+    print(i, CATEGORIES[int(prediction[0][0])])
